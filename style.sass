@@ -1,0 +1,69 @@
+//Imports
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin')
+
+//Variables
+$lightgrey: #eee
+$darkgrey: #bbb
+$lightblue: #0586bc
+$red: #d02525
+$green: #397332
+$white: #ffffff
+$black: #000000
+
+$tiledim: 120px
+
+$break-large: 700px
+
+html, body
+  margin: 0
+  padding: 0
+
+section
+  width: 100%
+  height: 100vh
+  position: relative
+
+section#main
+  background-color: $white
+  font-family: 'Libre Franklin', sans-serif
+
+  img.rockinterior
+    width: 40vw
+    position: absolute
+    right: 10%
+    top: 20%
+
+  .flexcontain
+    display: flex
+    height: 100%
+    position: absolute
+    left: 20vw
+    bottom: 0
+
+    @media screen and (min-width: $break-large)
+      height: auto
+      width: 100%
+      left: 0
+
+.tile
+  width: $tiledim
+  height: $tiledim
+  text-decoration: none
+  color: $black
+  text-align: center
+
+  &.projects
+    color: $lightblue
+  &.goals
+    color: $red
+  &.about
+    color: $green
+
+section#projects
+  background-color: $lightblue
+
+section#goals
+  background-color: $red
+
+section#about
+  background-color: $green
