@@ -1,5 +1,5 @@
 //Imports
-@import url('https://fonts.googleapis.com/css?family=Libre+Franklin')
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin:400,700')
 
 //Variables
 $lightgrey: #eee
@@ -12,11 +12,13 @@ $black: #000000
 
 $tiledim: 120px
 
-$break-large: 700px
+$break-small: 500px
+$break-large: 900px
 
 html, body
   margin: 0
   padding: 0
+  font-family: 'Libre Franklin', sans-serif
 
 section
   width: 100%
@@ -25,32 +27,61 @@ section
 
 section#main
   background-color: $white
-  font-family: 'Libre Franklin', sans-serif
 
   img.rockinterior
-    width: 40vw
+    width: 50vmin
     position: absolute
-    right: 10%
-    top: 20%
+    right: 20%
+    top: 15%
 
   .flexcontain
     display: flex
     height: 100%
     position: absolute
-    left: 20vw
+    left: 15vw
     bottom: 0
+    flex-direction: column
+    justify-content: center
 
-    @media screen and (min-width: $break-large)
+    @media screen and (max-width: $break-large)
       height: auto
       width: 100%
       left: 0
+      flex-direction: row
+      justify-content: space-around
+      margin-bottom: 20px
+
+#jasonwong
+  position: absolute
+  width: 40%
+  bottom: 0
+  right: 0
+  font-size: 6em
+  text-align: right
+  padding-right: 5%
+  line-height: 90%
+  font-weight: bold
+
+  &::before
+    display: block
+    content: "Hello, I'm"
+    font-weight: normal
+    font-size: 0.5em
+    line-height: 75%
 
 .tile
   width: $tiledim
   height: $tiledim
+  box-sizing: border-box
+  border-radius: 5px
+  padding: 10px
   text-decoration: none
   color: $black
   text-align: center
+  transition: all 0.25s linear
+
+  &:hover
+    background-color: $lightgrey
 
   &.projects
     color: $lightblue
