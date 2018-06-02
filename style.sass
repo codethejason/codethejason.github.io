@@ -28,19 +28,30 @@ section
 section#main
   background-color: $white
 
-  img.rockinterior
-    width: 50vmin
+  img.rock
     position: absolute
-    right: 20%
-    top: 15%
+
+  img.rockinterior
+    width: 30vw
+    right: 21vw
+    top: 12vw
+    z-index: 2
+
+  img.rockexterior
+    width: 50vw
+    right: 10vw
+    top: 0
+    transform: rotate(200deg)
 
   .flexcontain
     display: flex
     height: 100%
+    width: $tiledim*1.5
     position: absolute
     left: 15vw
     bottom: 0
     flex-direction: column
+    align-items: center
     justify-content: center
 
     @media screen and (max-width: $break-large)
@@ -82,6 +93,8 @@ section#main
 
   &:hover
     background-color: $lightgrey
+    width: $tiledim*1.5
+    height: $tiledim*1.5
 
   &.projects
     color: $lightblue
@@ -89,6 +102,10 @@ section#main
     color: $red
   &.about
     color: $green
+
+  .tileimg
+    width: 65%
+    padding: 10%
 
 section#projects
   background-color: $lightblue
