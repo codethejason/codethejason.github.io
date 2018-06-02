@@ -13,7 +13,8 @@ $black: #000000
 $tiledim: 120px
 
 $break-small: 500px
-$break-large: 900px
+$break-medium: 650px
+$break-large: 1000px
 
 html, body
   margin: 0
@@ -23,44 +24,57 @@ html, body
 section
   width: 100%
   height: 100vh
+  min-height: 400px
   position: relative
 
 section#main
   background-color: $white
-
-  img.rock
-    position: absolute
-
-  img.rockinterior
-    width: 30vw
-    right: 21vw
-    top: 12vw
-    z-index: 2
-
-  img.rockexterior
-    width: 50vw
-    right: 10vw
-    top: 0
-    transform: rotate(200deg)
 
   .flexcontain
     display: flex
     height: 100%
     width: $tiledim*1.5
     position: absolute
-    left: 15vw
+    left: 5vw
     bottom: 0
     flex-direction: column
     align-items: center
     justify-content: center
 
-    @media screen and (max-width: $break-large)
+    @media screen and (max-width: $break-medium)
       height: auto
       width: 100%
       left: 0
       flex-direction: row
       justify-content: space-around
       margin-bottom: 20px
+
+img.rock
+  position: absolute
+
+img.rockinterior
+  width: 30vw
+  right: 21vw
+  top: 12vw
+  z-index: 2
+
+  @media screen and (max-width: $break-medium)
+    display: none
+
+img.rockexterior
+  width: 50vw
+  right: 10vw
+  top: 0
+  transform: rotate(200deg)
+
+  @media screen and (max-width: $break-medium)
+    left: 50%
+    margin-left: -35vw
+    width: 70vw
+
+  @media screen and (max-width: $break-small)
+    transform: rotate(270deg)
+    top: 8vh
 
 #jasonwong
   position: absolute
@@ -80,6 +94,13 @@ section#main
     font-size: 0.5em
     line-height: 75%
 
+  @media screen and (max-width: $break-medium)
+    font-size: 18vw
+    position: relative
+    padding-top: 15vh
+    margin: auto
+    line-height: 100%
+
 .tile
   width: $tiledim
   height: $tiledim
@@ -90,6 +111,7 @@ section#main
   color: $black
   text-align: center
   transition: all 0.25s linear
+  z-index: 3
 
   &:hover
     background-color: $lightgrey
@@ -106,6 +128,11 @@ section#main
   .tileimg
     width: 65%
     padding: 10%
+
+  @media screen and (max-width: $break-medium)
+    &:hover
+      width: $tiledim
+      height: $tiledim
 
 section#projects
   background-color: $lightblue
