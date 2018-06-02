@@ -54,18 +54,37 @@ img.rock
 
 img.rockinterior
   width: 30vw
-  right: 21vw
+  right: 23vw
   top: 12vw
   z-index: 2
+  animation: wobbleinterior 8s infinite
+
+  @keyframes wobbleinterior
+    0%
+      transform: rotate(-10deg)
+    50%
+      transform: rotate(10deg)
+    100%
+      transform: rotate(-10deg)
 
   @media screen and (max-width: $break-medium)
     display: none
+    animation: none
 
 img.rockexterior
   width: 50vw
-  right: 10vw
+  right: 12vw
   top: 0
   transform: rotate(200deg)
+  animation: wobbleexterior 8s infinite
+
+  @keyframes wobbleexterior
+    0%
+      transform: rotate(190deg)
+    50%
+      transform: rotate(180deg)
+    100%
+      transform: rotate(190deg)
 
   @media screen and (max-width: $break-medium)
     left: 50%
@@ -74,7 +93,8 @@ img.rockexterior
 
   @media screen and (max-width: $break-small)
     transform: rotate(270deg)
-    top: 8vh
+    top: 6vh
+    animation: none
 
 #jasonwong
   position: absolute
@@ -95,9 +115,9 @@ img.rockexterior
     line-height: 75%
 
   @media screen and (max-width: $break-medium)
-    font-size: 18vw
+    font-size: 16vw
     position: relative
-    padding-top: 15vh
+    padding-top: 12vh
     margin: auto
     line-height: 100%
 
