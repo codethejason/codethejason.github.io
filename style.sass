@@ -16,19 +16,26 @@ $break-small: 500px
 $break-medium: 650px
 $break-large: 1000px
 
+$h2fontsize: 50px
+
 html, body
   margin: 0
   padding: 0
   font-family: 'Libre Franklin', sans-serif
 
+a
+  text-decoration: none
+
 section
   width: 100%
-  height: 100vh
-  min-height: 400px
+  //height: 100vh
+  //min-height: 400px
   position: relative
 
 section#main
   background-color: $white
+  height: 100vh
+  min-height: 400px
 
   .flexcontain
     display: flex
@@ -56,7 +63,7 @@ img.rockinterior
   width: 30vw
   right: 23vw
   top: 12vw
-  z-index: 2
+  z-index: 0
   animation: wobbleinterior 8s infinite
 
   @keyframes wobbleinterior
@@ -75,6 +82,7 @@ img.rockexterior
   width: 50vw
   right: 12vw
   top: 0
+  z-index: 0
   transform: rotate(200deg)
   animation: wobbleexterior 8s infinite
 
@@ -154,11 +162,34 @@ img.rockexterior
       width: $tiledim
       height: $tiledim
 
+section#projects, section#goals, section#about
+  padding: 10px 20px
+  box-sizing: border-box
+  background-color: $white
+  //border-top: 1px solid black
+  h2
+    font-size: $h2fontsize
+    margin: 15px 0 5px
+
 section#projects
-  background-color: $lightblue
+  h2
+    color: $lightblue
+  ul
+    list-style: none
+    padding-left: 20px
+  a
+    color: $black
+    font-size: 1.8em
 
 section#goals
-  background-color: $red
+  h2
+    color: $red
+  ol > li
+      font-size: 1.4em
+      line-height: 2
 
 section#about
-  background-color: $green
+  h2
+    color: $green
+  #meDescription
+    margin-left: 20px
